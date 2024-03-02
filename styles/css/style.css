@@ -60,7 +60,7 @@ img {
 }
 
 .image-label {
-  font-family: var(--fantasy-font-family);
+  font-family: var(--accent-font);
   font-size: 14px;
   font-variation-settings: var(--text-font-weight);
   z-index: 1;
@@ -111,22 +111,23 @@ img {
 }
 
 .like-icon .heart {
-  transition: fill 0.1s;
   transform-origin: center center;
 }
 
 .like-icon .contour {
+  transition: fill 0.3s linear;
   fill: var(--text-color);
 }
 
 .like-icon .main-body {
   fill: var(--page-background);
   transition: fill 0.3s linear;
+  transition-delay: 0.06s;
 }
 
 .like-icon .core {
   fill: var(--page-background);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s 0.06s;
 }
 
 .like-icon .sparks {
@@ -134,16 +135,27 @@ img {
   fill: var(--heart-color);
 }
 
-.like-icon:hover .main-body {
+.like-icon:hover {
+  fill: var(--text-color);
+  transition-delay: 0ms;
+}
+
+.main-body {
   fill: var(--text-color);
 }
 
 .like-icon:hover .core {
   fill: var(--text-color);
+  transition-delay: 0ms;
 }
 
-.like-icon:active .main-body {
+.main-body {
   fill: var(--heart-color);
+}
+
+.like-icon:active {
+  fill: var(--heart-color);
+  transition-delay: 0ms;
 }
 
 .like-icon:active .core {
@@ -152,6 +164,7 @@ img {
 
 .like-icon.is-liked .contour {
   fill: var(--heart-color);
+  transition: fill 0.3s 0.06s;
 }
 
 .like-icon.is-liked .main-body {
@@ -160,10 +173,11 @@ img {
 
 .like-icon.is-liked .core {
   fill: var(--heart-color);
+  transition-delay: 0ms;
 }
 
 .button {
-  font-family: var(--fantasy-font-family);
+  font-family: var(--accent-font);
   font-size: 14px;
   position: relative;
   overflow: hidden;
@@ -171,7 +185,6 @@ img {
   background: none;
   border: 2px solid var(--stroke-color);
   cursor: pointer;
-  transition: 0.5s ease-in-out;
 }
 
 .button::before {
@@ -198,6 +211,7 @@ img {
 
 .button:focus-visible {
   box-shadow: 2px 2px 0px 0px var(--text-color);
+  transition: 0.5s ease-in-out;
 }
 
 .button__text {
@@ -212,11 +226,13 @@ img {
   gap: 8px;
   align-items: center;
   background: var(--page-background);
+  margin-bottom: 55px;
 }
 
 @media (width <= 375px) {
   .save-button {
     flex-direction: column;
+    margin-bottom: 55px;
   }
 }
 
@@ -234,7 +250,7 @@ img {
 }
 
 .header {
-  font-family: var(--fantasy-font-family);
+  font-family: var(--accent-font);
   text-align: center;
   margin: 100px 0;
   padding: 136px 0 23px;
@@ -406,7 +422,7 @@ img {
 }
 
 .dialog {
-  font-family: var(--fantasy-font-family);
+  font-family: var(--accent-font);
   font-size: 14px;
   padding: 30px 26px;
   color: var(--text-color);
