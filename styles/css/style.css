@@ -115,19 +115,20 @@ img {
 }
 
 .like-icon .contour {
-  transition: fill 0.3s linear;
+  transition: fill 0.1s linear;
   fill: var(--text-color);
 }
 
-.like-icon .main-body {
+.like-icon {
   fill: var(--page-background);
   transition: fill 0.3s linear;
-  transition-delay: 0.06s;
+  transition-delay: 0.05s;
 }
 
 .like-icon .core {
   fill: var(--page-background);
-  transition: fill 0.3s 0.06s;
+  transition: fill 0.3s 0.03s;
+  transition-timing-function: linear;
 }
 
 .like-icon .sparks {
@@ -142,15 +143,15 @@ img {
 
 .main-body {
   fill: var(--text-color);
+  fill: var(--heart-color);
+  fill: var(--page-background);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
 }
 
 .like-icon:hover .core {
   fill: var(--text-color);
   transition-delay: 0ms;
-}
-
-.main-body {
-  fill: var(--heart-color);
 }
 
 .like-icon:active {
@@ -160,15 +161,18 @@ img {
 
 .like-icon:active .core {
   fill: var(--heart-color);
+  transition-delay: 0ms;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--heart-color);
   transition: fill 0.3s 0.06s;
+  transition-property: none;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-color);
+  transition-delay: 0, 03s;
 }
 
 .like-icon.is-liked .core {
@@ -179,6 +183,9 @@ img {
 .button {
   font-family: var(--accent-font);
   font-size: 14px;
+  transition-property: none;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0, 5s;
   position: relative;
   overflow: hidden;
   color: var(--mix-blend-color);
@@ -211,7 +218,6 @@ img {
 
 .button:focus-visible {
   box-shadow: 2px 2px 0px 0px var(--text-color);
-  transition: 0.5s ease-in-out;
 }
 
 .button__text {
@@ -232,7 +238,7 @@ img {
 @media (width <= 375px) {
   .save-button {
     flex-direction: column;
-    margin-bottom: 55px;
+    margin-bottom: 84px;
   }
 }
 
