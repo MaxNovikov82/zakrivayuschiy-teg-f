@@ -121,8 +121,6 @@ img {
 
 .like-icon {
   fill: var(--page-background);
-  transition: fill 0.3s linear;
-  transition-delay: 0.05s;
 }
 
 .like-icon .core {
@@ -136,9 +134,24 @@ img {
   fill: var(--heart-color);
 }
 
-.like-icon:hover {
-  fill: var(--text-color);
-  transition-delay: 0ms;
+.like-icon:hover .core {
+  fill: var(--like-contour-color, #000000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--like-contour-color, #000000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--like-sparks-color, #ff0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--like-sparks-color, #ff0000);
+  transition: fill 0.3s linear 0.05s;
 }
 
 .main-body {
@@ -146,33 +159,17 @@ img {
   fill: var(--heart-color);
   fill: var(--page-background);
   transition: fill 0.3s linear;
-  transition-delay: 0.05s;
-}
-
-.like-icon:hover .core {
-  fill: var(--text-color);
-  transition-delay: 0ms;
-}
-
-.like-icon:active {
-  fill: var(--heart-color);
-  transition-delay: 0ms;
-}
-
-.like-icon:active .core {
-  fill: var(--heart-color);
-  transition-delay: 0ms;
+  transition-delay: 0s;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--heart-color);
-  transition: fill 0.3s 0.06s;
-  transition-property: none;
+  fill: var(--like-sparks-color, #ff0000);
+  transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--heart-color);
-  transition-delay: 0, 03s;
+  fill: var(--like-sparks-color, #ff0000);
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
@@ -183,9 +180,7 @@ img {
 .button {
   font-family: var(--accent-font);
   font-size: 14px;
-  transition-property: none;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0, 5s;
+  transition: box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
   color: var(--mix-blend-color);
@@ -228,6 +223,7 @@ img {
 .save-button {
   padding: 15px 20px;
   margin: 0 auto;
+  margin-top: -20px;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -238,7 +234,7 @@ img {
 @media (width <= 375px) {
   .save-button {
     flex-direction: column;
-    margin-bottom: 84px;
+    margin-top: -10px;
   }
 }
 
